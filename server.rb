@@ -18,6 +18,10 @@ def endpoint
   "https://maker.ifttt.com/trigger/#{EVENT_NAME}/with/key/#{ENV["IFTTT_MAKER_KEY"]}"
 end
 
+get "/"
+  "It works!"
+end
+
 post '/ping' do
   status = Octokit.github_status.status
   body = { "value1" => COLORS[status] }
