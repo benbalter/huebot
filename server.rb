@@ -18,7 +18,7 @@ def endpoint
   "https://maker.ifttt.com/trigger/#{EVENT_NAME}/with/key/#{ENV["IFTTT_MAKER_KEY"]}"
 end
 
-get "/"
+get "/" do
   "It works!"
 end
 
