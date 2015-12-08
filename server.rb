@@ -14,21 +14,13 @@ COLORS = {
 
 EVENT_NAME = "github_status_change"
 
-def endpoint
-  "https://maker.ifttt.com/trigger/#{EVENT_NAME}/with/key/#{ENV["IFTTT_MAKER_KEY"]}"
-end
-
-def logger
-  @logger ||= Logger.new(STDOUT)
-end
-
-get "/" do
-  "It works!"
-end
-
 post '/ping' do
   status = Octokit.github_status.status
-  logger.info "Updating with status #{status}"
+  Logger.new(STDOUT).info "Updating with status #{status}"
+
+  key = ENV["IFTTT_MAKER_KEY"]
+  endpoint = "https://maker.ifttt.com/trigger/#{EVENT_NAME}/with/key/#{key}"
   body = { "value1" => COLORS[status] }
+
   Typhoeus.post endpoint, body: body
 end
