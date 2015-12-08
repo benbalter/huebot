@@ -18,12 +18,17 @@ def endpoint
   "https://maker.ifttt.com/trigger/#{EVENT_NAME}/with/key/#{ENV["IFTTT_MAKER_KEY"]}"
 end
 
+def logger
+  @logger ||= Logger.new(STDOUT)
+end
+
 get "/" do
   "It works!"
 end
 
 post '/ping' do
   status = Octokit.github_status.status
+  logger.info "Updating with status #{status}"
   body = { "value1" => COLORS[status] }
   Typhoeus.post endpoint, body: body
 end
