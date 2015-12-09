@@ -2,8 +2,6 @@ class Switcher
   include Celluloid
   include Celluloid::Internals::Logger
 
-  LIGHT = 3
-
   def github_status
     Octokit.github_status.status
   end
@@ -15,6 +13,6 @@ class Switcher
   def switch!
     status = github_status
     info "Switching light to #{status}"
-    hue.set_color LIGHT, status
+    hue.set_color ENV["HUE_LIGHT_ID"], status
   end
 end
