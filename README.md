@@ -1,6 +1,6 @@
 # GitHub Status Hue
 
-Sets and flashes a Phillips Hue light based on GitHub's status
+Changes a Phillips Hue light's color and flashes based on GitHub's status
 
 ## What it does
 
