@@ -1,0 +1,5 @@
+#!/bin/sh
+
+set -ex
+
+NO_POLL=1 bundle exec pry -r "./lib/main.rb"

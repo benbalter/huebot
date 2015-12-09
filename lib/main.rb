@@ -17,8 +17,10 @@ TweetStream.configure do |config|
   config.auth_method        = :oauth
 end
 
-twitter_id = ENV.fetch "TWITTER_ID", "2293448130"
-TweetStream::Client.new.follow(twitter_id) do |tweet|
-  Logger.new(STDOUT).info "We've got a new tweet!"
-  Switcher.new.async.switch!
+unless ENV["NO_POLL"]
+  twitter_id = ENV.fetch "TWITTER_ID", "2293448130"
+  TweetStream::Client.new.follow(twitter_id) do |tweet|
+    Logger.new(STDOUT).info "We've got a new tweet!"
+    Switcher.new.async.switch!
+  end
 end
