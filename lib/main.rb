@@ -4,6 +4,7 @@ require 'celluloid'
 require 'typhoeus'
 require 'octokit'
 require 'json'
+require_relative 'hue'
 require_relative 'switcher'
 
 Dotenv.load
@@ -16,7 +17,7 @@ TweetStream.configure do |config|
   config.auth_method        = :oauth
 end
 
-twitter_id = ENV.fetch "TWITTER_ID"
+twitter_id = ENV.fetch "TWITTER_ID", "2293448130"
 TweetStream::Client.new.follow(twitter_id) do |tweet|
   Logger.new(STDOUT).info "We've got a new tweet!"
   Switcher.new.async.switch!

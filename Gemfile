@@ -8,3 +8,7 @@ gem 'typhoeus'
 gem 'celluloid'
 gem 'tweetstream'
 gem 'foreman'
+
+group :development do
+  gem 'pry'
+end

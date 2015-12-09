@@ -2,26 +2,19 @@ class Switcher
   include Celluloid
   include Celluloid::Internals::Logger
 
-  EVENT_NAME = "github_status_change"
-  COLORS = {
-    "good"  => "#FFFFFF",
-    "minor" => "#FFFF00",
-    "major" => "#FF0000"
-  }
+  LIGHT = 3
 
   def github_status
     Octokit.github_status.status
   end
 
-  def endpoint
-    "https://maker.ifttt.com/trigger/#{EVENT_NAME}/with/key/#{ENV["IFTTT_MAKER_KEY"]}"
+  def hue
+    @hue ||= Hue.new bridge_id: ENV["HUE_BRIDGE_ID"], access_token: ENV["HUE_ACCESS_TOKEN"]
   end
 
   def switch!
     status = github_status
-    body = { "value1" => COLORS[status] }
-    
     info "Switching light to #{status}"
-    Typhoeus.post endpoint, body: body
+    hue.set_color LIGHT, status
   end
 end
