@@ -1,4 +1,4 @@
-# GitHub Status Hue
+# Huebot
 
 Changes a Phillips Hue light's color and flashes based on GitHub's status
 
