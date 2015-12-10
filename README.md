@@ -10,7 +10,7 @@ Changes a Phillips Hue light's color and flashes based on GitHub's status
 
 ## How it works
 
-When GitHub's status changes, @githubstatus Tweets. We use that as an inbound web hook to tell the app to change the light's state. The app streams the account's Tweets, and uses GitHub's status API to grab the current site status any time in changes, and then makes a call to an undocumented Hue API to set the light accordingly.
+When GitHub's status changes, @githubstatus Tweets. We use that as an inbound web hook to tell the app to change the light's state. The app streams the account's Tweets, and uses GitHub's status API to grab the current site status any time it changes, and then makes a call to an undocumented Hue API to set the light accordingly.
 
 ## Constraints
 
