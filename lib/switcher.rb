@@ -7,12 +7,12 @@ class Switcher
   end
 
   def hue
-    @hue ||= Hue.new bridge_id: ENV["HUE_BRIDGE_ID"], access_token: ENV["HUE_ACCESS_TOKEN"]
+    @hue ||= Hue.new bridge_id: ENV['HUE_BRIDGE_ID'], access_token: ENV['HUE_ACCESS_TOKEN']
   end
 
   def switch!
     status = github_status
     info "Switching light to #{status}"
-    hue.set_color ENV["HUE_LIGHT_ID"].to_i, status
+    hue.set_color ENV['HUE_LIGHT_ID'].to_i, status
   end
 end
