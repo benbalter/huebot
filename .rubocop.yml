@@ -1,0 +1,10 @@
+AllCops:
+  TargetRubyVersion: 2.5
+  Exclude:
+    - lib/huebot/client.rb
+
+Style/Documentation:
+  Enabled: false
+
+Metrics/LineLength:
+  Enabled: false

@@ -2,4 +2,4 @@
 
 set -ex
 
-NO_POLL=1 bundle exec pry -r "./lib/main.rb"
+NO_POLL=1 OAUTH_DEBUG=true bundle exec pry -r "./lib/huebot"
