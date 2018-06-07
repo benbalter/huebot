@@ -10,7 +10,7 @@ Changes a Phillips Hue light's color and flashes based on GitHub's status
 
 ## How it works
 
-When GitHub's status changes, @githubstatus Tweets. We use that as an inbound web hook to tell the app to change the light's state. The app streams the account's Tweets, and uses GitHub's status API to grab the current site status any time it changes, and then makes a call to an undocumented Hue API to set the light accordingly.
+When GitHub's status changes, @githubstatus Tweets. We use that as an inbound web hook to tell the app to change the light's state. The app streams the account's Tweets, and uses GitHub's status API to grab the current site status any time it changes, and then makes a call to the Hue Remote API to set the light accordingly.
 
 ## Constraints
 
@@ -26,15 +26,12 @@ I wanted the app to do two things:
 
 ## Configuration
 
-You'll want to set the following configuration variables:
+You'll need to create a Hue App and a Twitter app, and then will want to set the following configuration variables:
 
 * `TWITTER_CONSUMER_KEY`
 * `TWITTER_CONSUMER_SECRET`
 * `TWITTER_OAUTH_TOKEN`
 * `TWITTER_OAUTH_TOKEN_SECRET`
-* `TWITTER_ID` - An optional, alternate Twitter user ID to trigger the event, for debugging
-* `HUE_BRIDGE_ID`
-* `HUE_ACCESS_TOKEN`
-* `HUE_LIGHT_ID` - numeric ID of light on bridge, e.g. 1, 2, or 3
-
-Folow [these instructions](http://blog.paulshi.me/technical/2013/11/27/Philips-Hue-Remote-API-Explained.html) to get your bridge ID and token.
+* `HUE_CLIENT_ID`
+* `HUE_CLIENT_SECRET`
+* `HUE_LIGHT_ID` -  numeric ID of light on bridge, e.g. 1, 2, or 3

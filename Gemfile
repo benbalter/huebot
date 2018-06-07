@@ -12,7 +12,6 @@ gem 'octokit'
 gem 'redis'
 gem 'sinatra'
 gem 'twitter'
-gem 'typhoeus'
 
 group :development do
   gem 'pry'
