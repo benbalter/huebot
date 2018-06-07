@@ -1,1 +1,1 @@
-worker: bundle exec ruby lib/main.rb
+worker: bundle exec script/stream
