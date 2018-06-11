@@ -1,2 +1,2 @@
-worker: bundle exec script/stream
-cron: bundle exec script/refresh
+worker: script/stream
+cron: script/refresh
