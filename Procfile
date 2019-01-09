@@ -1,2 +1,2 @@
-worker: script/stream
+web: script/server
 cron: script/refresh

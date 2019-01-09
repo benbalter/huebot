@@ -2,9 +2,6 @@
 
 class Huebot
   class Switcher
-    include Celluloid
-    include Celluloid::Internals::Logger
-
     def github_status
       Octokit.github_status.status
     end
@@ -15,7 +12,7 @@ class Huebot
 
     def switch!
       status = github_status
-      info "Switching light to #{status}"
+      Huebot.logger.info "Switching light to #{status}"
       Huebot.light_control.set_color light_id, status
     end
   end

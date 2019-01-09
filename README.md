@@ -22,16 +22,12 @@ I wanted the app to do two things:
 ## Prior art and special thanks
 
 * @johndbritton's [Twitterhook](https://github.com/johndbritton/twitterhook) for streaming Tweets
-* @websages's [GitHub Status Hue](https://github.com/websages/github-status-hue) for the idea and undocumented API
+* @websages's [GitHub Status Hue]( ) for the idea and undocumented API
 
 ## Configuration
 
-You'll need to create a Hue App and a Twitter app, and then will want to set the following configuration variables:
+You'll need to create a Hue App, and then will want to set the following configuration variables:
 
-* `TWITTER_CONSUMER_KEY`
-* `TWITTER_CONSUMER_SECRET`
-* `TWITTER_OAUTH_TOKEN`
-* `TWITTER_OAUTH_TOKEN_SECRET`
 * `HUE_CLIENT_ID`
 * `HUE_CLIENT_SECRET`
 * `HUE_LIGHT_ID` -  numeric ID of light on bridge, e.g. 1, 2, or 3
