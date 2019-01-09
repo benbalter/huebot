@@ -31,3 +31,7 @@ You'll need to create a Hue App, and then will want to set the following configu
 * `HUE_CLIENT_ID`
 * `HUE_CLIENT_SECRET`
 * `HUE_LIGHT_ID` -  numeric ID of light on bridge, e.g. 1, 2, or 3
+
+You can get these by running `script/auth-server` and loading the page in your browser.
+
+You'll also want to configure githubstatus.com to send your instance a webhook when the status changes.
